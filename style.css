@@ -1,0 +1,497 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+/* HEADER SECTION */
+.header{
+    min-height: 100vh;  /* img show vertically that why use min-height */
+    width: 100%;        /* img show horizontally thats why use width*/
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(img/banner.png); /* here add linear gradient and url*/
+    background-position: center; /* bg position center*/
+    background-size: cover;    /* bg size cover*/
+    position: relative;       /* here add position relative*/
+}
+/* NAV SECTION */
+nav{
+    display: flex;         /* here add display flex for nav item are horizontal*/
+    text-align: center; /* here add text align center */
+    justify-content: space-between; /* make space between the nav items by justify content*/
+    padding: 2% 6%;   /* add margin*/
+}
+/* logo section */
+nav img{
+    width:150px;  /* here add logo size by witdh*/
+
+}
+/* nav-links section */
+.nav-links{
+    flex: 1;
+    text-align: right;
+}
+.nav-links ul li{
+    display: inline-block;  /* here nav ul li make horizontal line */
+    padding: 7px;
+    list-style: none;
+    position: relative;
+}
+.nav-links ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+.nav-links ul li::after{
+    content: '';
+    background: #f44336 ;
+    height: 2px;
+    width: 0;
+    display: block;
+    margin: auto;
+    transition: 0.6s;
+}
+.nav-links ul li:hover::after{
+    width: 100%;
+}
+nav .fa-solid{
+    display: none;
+}
+@media(max-width:700px) {
+    nav{
+        /* padding: 0; */
+    }
+    .nav-links{
+        height: 100vh;
+        width: 200px;
+        background:#f44336;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 0.5s;
+
+
+        
+    }
+    .nav-links ul li::after{
+        content: '';
+        margin: 0;
+        background: white;
+
+    }
+    .nav-links ul li{
+        display: block;
+        
+        
+    }
+    nav .fa-solid{
+        display: block;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        font-size: 20px;
+    }
+    .nav-links ul{
+        padding: 30px;
+    }
+}
+
+/* banner section */
+.banner{
+    width: 90%;
+    margin: auto;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%,-50%);
+
+}
+.banner h1{
+    font-size: 59px;
+    font-weight: 600;
+    margin-bottom: 10px;
+
+}
+.banner p{
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 50px;
+}
+.btn{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    border: 1px solid white;
+    background-color:transparent;
+    padding: 16px 40px;
+    transition: 0.6s;
+}
+.btn:hover{
+    background: #f44336;
+    border: 1px solid #f44336;
+}
+@media(max-width: 700px) {
+    .banner h1{
+        font-size: 25px;
+        font-weight: 600;
+    }
+    .btn{
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    .banner p{
+        font-size: 13px;
+
+    }
+}
+
+
+/* course section */
+.course{
+    width: 80%;
+    text-align: center;
+    padding-top: 100px;
+    margin: auto;
+
+}
+h1{
+    font-size: 35px;
+    font-weight: 600;
+}
+p{
+    font-size: 14px;
+    color: #777;
+    padding: 10px;
+    line-height: 20px;
+    font-weight: 400;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+}
+.course-col{
+    flex-basis: 31%;
+    background: #ffefee;
+    margin: 10px;
+    padding: 24px 18px;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+.course-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.3);
+}
+h3{
+    padding: 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
+@media(max-width: 700px) {
+    .row{
+        flex-direction: column;
+    }
+    
+}
+
+/* campus section */
+.campus{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding-top: 50px;
+}
+
+.campus-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+
+
+}
+.campus-col img{
+    width: 100%;
+    display: block;
+}
+.layer{
+    height: 100%;
+    width: 100%;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    right: 0;  
+    transition: 0.6s;
+}
+.layer:hover{
+    background: rgba(255, 0, 0, 0.502);
+}
+.layer h3{
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+    transition: 0.5s;
+}
+.layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+}
+
+/* facilities section */
+.facilities{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+}
+.facilities-col{
+    flex-basis: 31%;
+}
+.facilities-col img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+
+}
+.facilities-text{
+    padding-left:0 ;
+    text-align: left;
+}
+
+
+/* testimonial section */
+.testimonial{
+
+    padding-top: 50px;
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding-bottom:50px ;
+
+
+}
+.testimonial-col{
+    flex-basis: 45%;
+    display: flex;
+    justify-content: space-between;
+    background: #ffefee;
+    padding: 18px 20px;
+    border-radius: 10px;
+    margin-bottom: 5%;
+}
+.testimonial-col img{
+    margin-top: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.user-text{
+    text-align: left;
+}
+.user-text p{
+    font-size: 13px;
+    padding-bottom: 10px;
+}
+.user-text h4{
+    font-size: 17px;
+    font-weight: 600;
+    padding-left: 7px;
+    padding-bottom: 10px;
+}
+.fa-star, .fa-star-half-stroke{
+    color: #f44336;
+}
+.cta{
+    width: 80%;
+    padding: 70px 0;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 10px;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(./img/banner2.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.cta h1{
+    margin: 30px 0;
+    color: white;
+}
+.cta a{
+    margin: 30px 0;
+}
+/* about section  */
+.footer{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    margin-top: 50px;
+}
+.footer p{
+    margin: 10px 0;
+}
+.fa-brands{
+    font-size: 20px;
+    color: #f44336;
+    padding: 0 10px;
+}
+.footer-icon{
+    color: #777;
+}
+
+
+
+
+
+
+
+/* about us page */
+.sub-header{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(./img/background.jpg);
+    background-position:center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+.sub-header h1{
+    margin-top:100px ;
+}
+.about-us{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    margin-bottom: 50px;
+}
+.about-col{
+    flex-basis: 48%;
+    padding: 30px 2px;
+
+}
+.about-col img{
+    width: 100%;
+}
+.about-col h1{
+    padding-top: 0;
+
+}
+.about-col p{
+    padding: 15px 0 25px;
+}
+.red-btn{
+    margin-top: 20px;
+    border: 1px solid #f44336;
+    color: #f44336;
+    font-weight: 600;
+}
+.red-btn:hover{
+    color: white;
+}
+
+/* blog section */
+.certificate{
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+}
+.col-left{
+    flex-basis: 63%;
+
+}
+.col-left img{
+    width: 100%;
+}
+.col-left h2{
+    padding-top: 20px;
+}
+.col-left p{
+    padding: 10px 0;
+    color: #999;
+}
+.comment{
+    border: 1px solid #999;
+    padding: 25px 30px;
+    margin: 20px 0;
+}
+.comment-from{}
+ input, textarea{
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+    padding: 10px;
+    border: none;
+    background: #f0f0f0;
+}
+.col-right{
+    flex-basis: 34%;
+}
+.col-right h3{
+    background: #f44336;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.col-right div{
+    display: flex;
+    justify-content: space-between;
+
+}
+.col-right span{
+    font-size: 20px;
+    color: #777;
+    line-height: 40px;
+}
+@media(max-width:700px) {
+    .banner h1{
+        font-size: 20px;
+    
+    }
+}
+
+/* contact us */
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+
+}
+.location iframe{
+    width: 100%;
+}
+.contact-us {
+    width: 80%;
+    margin: auto;
+}
+.contact-col{
+    flex-basis: 48%;
+    margin-bottom: 30px;
+}
+.contact-col div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.contact-col .fa-solid {
+    font-size: 28px;
+    color: #f44336;
+    margin: 10px;
+    margin-right: 30px;
+}
+.contact-col div p{
+    padding: 0;
+
+}
+.contact-col div h5{
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 400;
+}
